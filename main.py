@@ -10,11 +10,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 import os
-# Optional: add contact me email functionality
+# add contact me email functionality
 import smtplib
 from email.message import EmailMessage  # use this to help format emails before you send them
 
-app = Flask(__name__)
+app = Flask(__name__)  # "app" is the main object for everything below
 app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
